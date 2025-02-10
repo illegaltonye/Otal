@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <meta name="description" content="Start your journey to mastering Forex trading with Otal. Gain access to over 80 in-depth courses and transform your trading skills.">
+  <meta name="keywords" content="Forex, trading, courses, Jeffrey Benson, Otal">
+  <meta name="author" content="Otal">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .navbar .left, .navbar .center, .navbar .right {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .center {
+      margin: 0 auto;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      padding: 14px 20px;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {
+      color: #262678;
+    }
+    .navbar button {
+      padding: 10px 20px;
+      background-color: #262678;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-top-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      font-size: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+    .navbar button:hover {
+      background-color: #1d1d6b;
+    }
+    .promo-section {
+      width: 100%;
+      height: 100vh;
+      padding: 20px;
+      background: url('bg.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .promo-section h1 {
+      font-size: 64px;
+    }
+    .promo-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    .promo-section .cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .promo-section .cta button {
+      background-color: white;
+      color: #262678;
+      padding: 10px 20px;
+      border: none;
+      border-top-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .promo-section .cta button:hover {
+      background-color: #1d1d6b;
+      color: white;
+    }
+    .learn-more {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .learn-more a {
+      color: blue;
+      text-decoration: none;
+    }
+    .learn-more a:hover {
+      text-decoration: underline;
+    }
+    .meet-your-mentor, .learn-about-otal {
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      text-align: left;
+    }
+    .meet-your-mentor .text, .learn-about-otal .text {
+      flex: 1;
+    }
+    .meet-your-mentor .image-placeholder, .learn-about-otal .image-placeholder {
+      width: 300px;
+      height: 500px; /* Increased height */
+      background-color: #262678;
+      border-radius: 15px;
+      margin-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .learn-about-otal {
+      flex-direction: row-reverse;
+    }
+    .learn-about-otal .image-placeholder {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 0 20px;
+      }
+      .navbar .center, .navbar .right {
+        display: none;
+      }
+      .navbar .left {
+        flex: 1;
+        justify-content: space-between;
+      }
+      .mobile-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px 20px;
+      }
+      .mobile-nav {
+        display: none; /* Hide by default */
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        height: 100%;
+        width: 250px;
+        box-shadow: -2px 0 4px rgba(0,0,0,0.1);
+        padding-top: 60px;
+        transition: right 0.3s;
+        z-index: 1000;
+      }
+      .mobile-nav.open {
+        right: 0;
+      }
+      .mobile-nav a {
+        padding: 14px 20px;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        text-align: left;
+      }
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .meet-your-mentor, .learn-about-otal {
+        flex-direction: column;
+        text-align: center;
+      }
+      .meet-your-mentor .text, .learn-about-otal .text {
+        margin-bottom: 20px;
+      }
+      .meet-your-mentor .image-placeholder, .learn-about-otal .image-placeholder {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none; /* Hide on desktop */
+      }
+      .mobile-nav {
+        display: none; /* Ensure it remains hidden on desktop view */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="left">
+      <img src="logo-placeholder.png" alt="Logo" class="logo-image">
+      <div class="mobile-menu" onclick="toggleMobileNav()">☰</div>
+    </div>
+    <div class="center">
+      <a href="#">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Plans</a>
+      <a href="#">FAQs</a>
+      <a href="#">Support</a>
+      <a href="#">Lotsize Calculator</a>
+    </div>
+    <div class="right">
+      <button>Sign Up</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="close-btn" onclick="toggleMobileNav()">×</div>
+    <a href="#">Home</a>
+    <a href="#">Blog</a>
+    <a href="#">About</a>
+    <a href="#">Plans</a>
+    <a href="#">FAQs</a>
+    <a href="#">Support</a>
+    <a href="#">Lotsize Calculator</a>
+    <a href="#">Sign Up</a>
+  </div>
+  <div class="promo-section">
+    <h1>Welcome to Otal</h1>
+    <p>Start your journey to mastering Forex trading with one of the best in the world! Go from a beginner to an advanced FX trader with the one and only JEFFREY BENSON. Enroll now to gain access to over 80 in-depth courses that carefully explain the extreme complexities of the forex market.</p>
+    <div class="cta">
+      <button>Enroll with us now</button>
+    </div>
+  </div>
+  <div class="learn-more">
+    <a href="#">Learn more about Otal</a>
+  </div>
+  <div class="meet-your-mentor">
+    <div class="text">
+      <h2>Meet your MENTOR...</h2>
+      <p>At Forex Mastery, we are dedicated to empowering individuals with the knowledge and skills needed to succeed in the dynamic world of Forex trading. Our mission is to provide high-quality education, tools, and support to help you navigate the currency market with confidence.</p>
+    </div>
+    <div class="image-placeholder">
+      Image Placeholder
+    </div>
+  </div>
+  <div class="learn-about-otal">
+    <div class="text">
+      <h2>Learn about Otal</h2>
+      <p>Discover the unique features and benefits of Otal, the premier platform for mastering Forex trading. Our comprehensive courses and expert guidance will help you achieve success in the Forex market.</p>
+    </div>
+    <div class="image-placeholder">
+      Image Placeholder
+    </div>
+  </div>
+  <div class="footer">
+    <p>© 2025 Otal. All rights reserved.</p>
+  </div>
+  <script>
+    function toggleMobileNav() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('open');
+      console.log('toggleMobileNav function called'); // Debugging line
+    }
+
+    document.querySelector('.mobile-menu').addEventListener('click', toggleMobileNav);
+    document.querySelector('.close-btn').addEventListener('click', toggleMobileNav);
+  </script>
+</body>
+</html>
