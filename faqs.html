@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Page</title>
+  <meta name="description" content="Frequently Asked Questions - Find answers to common queries about Otal and Forex trading.">
+  <meta name="keywords" content="Forex, trading, FAQs, questions, answers, Otal">
+  <meta name="author" content="Otal">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    .navbar {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      background-color: white;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: all 0.3s ease-in-out;
+      overflow-x: hidden; /* Prevent horizontal overflow in navbar */
+    }
+    .navbar:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .navbar .left, .navbar .center, .navbar .right {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .center {
+      margin: 0 auto;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      padding: 14px 20px;
+      transition: color 0.3s, opacity 0.3s;
+    }
+    .navbar a:hover {
+      color: #262678;
+      opacity: 0.7;
+    }
+    .navbar button {
+      padding: 10px 20px;
+      background-color: #262678;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-top-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      font-size: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+    .navbar button:hover {
+      background-color: #1d1d6b;
+    }
+    .content {
+      padding: 40px 20px;
+      overflow-x: hidden; /* Prevent horizontal overflow in content */
+    }
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-section h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .faq {
+      margin-bottom: 20px;
+    }
+    .faq h2 {
+      cursor: pointer;
+      margin: 0;
+      padding: 10px;
+      background-color: #262678;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .faq h2:hover {
+      background-color: #1d1d6b;
+    }
+    .faq p {
+      display: none;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 0;
+    }
+    .faq.active p {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .navbar .center, .navbar .right {
+        display: none;
+      }
+      .navbar .left {
+        flex: 1;
+        justify-content: space-between;
+      }
+      .mobile-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px 20px;
+      }
+      .mobile-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        height: 100%;
+        width: 250px;
+        box-shadow: -2px 0 4px rgba(0,0,0,0.1);
+        padding-top: 60px;
+        transition: right 0.3s;
+        z-index: 1000;
+      }
+      .mobile-nav.open {
+        right: 0;
+      }
+      .mobile-nav a {
+        padding: 14px 20px;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        text-align: left;
+      }
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none;
+      }
+      .mobile-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="left">
+      <img src="logo-placeholder.png" alt="Logo" class="logo-image">
+      <div class="mobile-menu" onclick="toggleMobileNav()">☰</div>
+    </div>
+    <div class="center">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#plans">Plans</a>
+      <a href="index.html#blog">Blog</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="index.html#support">Support</a>
+      <a href="index.html#calculator">Lotsize Calculator</a>
+    </div>
+    <div class="right">
+      <button onclick="location.href='index.html#signup'">Sign Up</button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="close-btn" onclick="toggleMobileNav()">×</div>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#plans">Plans</a>
+    <a href="index.html#blog">Blog</a>
+    <a href="faqs.html">FAQs</a>
+    <a href="index.html#support">Support</a>
+    <a href="index.html#calculator">Lotsize Calculator</a>
+    <a href="index.html#signup">Sign Up</a>
+  </div>
+  <div class="content">
+    <div class="faq-section">
+      <h1>Frequently Asked Questions</h1>
+      <div class="faq">
+        <h2>What is Forex trading?</h2>
+        <p>Forex trading, also known as foreign exchange trading, involves the buying and selling of currencies on the foreign exchange market with the aim of making a profit.</p>
+      </div>
+      <div class="faq">
+        <h2>How can I start trading Forex with Otal?</h2>
+        <p>To start trading Forex with Otal, simply sign up on our platform, enroll in one of our comprehensive courses, and start learning the ins and outs of Forex trading.</p>
+      </div>
+      <div class="faq">
+        <h2>What payment methods do you accept?</h2>
+        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers.</p>
+      </div>
+      <div class="faq">
+        <h2>Do you offer support for beginners?</h2>
+        <p>Yes, we offer extensive support for beginners through our beginner courses, live sessions, and community forums where you can ask questions and receive guidance.</p>
+      </div>
+      <!-- Add more FAQs as needed -->
+    </div>
+  </div>
+  <script>
+    function toggleMobileNav() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('open');
+      console.log('toggleMobileNav function called');
+    }
+  
+    document.querySelector('.mobile-menu').addEventListener('click', toggleMobileNav);
+    document.querySelector('.close-btn').addEventListener('click', toggleMobileNav);
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq h2').forEach(faqHeader => {
+      faqHeader.addEventListener('click', () => {
+        faqHeader.parentElement.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
